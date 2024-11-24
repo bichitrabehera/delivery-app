@@ -38,7 +38,9 @@ ALLOWED_HOSTS = []
 # Static files (CSS, JS, images)
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontend'),  # Path to the frontend directory
+    os.path.join(BASE_DIR, 'frontend'), 
+   
+  
 ]
 
 
@@ -68,7 +70,9 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'frontend',  # Use pathlib to concatenate the path
+            BASE_DIR / 'frontend',  
+            BASE_DIR / 'frontend' / 'templates'
+           
         ],
         'APP_DIRS': True,
         'OPTIONS': {

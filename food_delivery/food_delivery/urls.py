@@ -23,5 +23,5 @@ from django.urls import path, include  # The 'include' function is necessary
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Django admin panel
-    path('', include('orders.urls')),  # Include the URLs from the 'orders' app
+    path('', include('orders.urls')),
 ]
