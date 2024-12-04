@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+    <!-- Corrected static path -->
+    <link rel="stylesheet" href="{% static 'style2.css' %}" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <h1>Pizza Delivery</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+<li><a href="/admin-panel/">Django Admin</a></li>
+          <li> <a href="{% url 'custom_admin_login' %}">Admin Login</a></li>
+          <li><a href="{% url 'user_login' %}">User Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h1>Admin Login</h1>
+      <form action="{% url 'admin_login' %}" method="POST">
+        {% csrf_token %}
+        <label for="name">Admin ID :</label>
+        <input type="text" id="name" name="admin_id" /><br />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" /><br /><br />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Pizza Delivery. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
